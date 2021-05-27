@@ -7,9 +7,127 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
 <title>JavaScript Name Variations</title>
 </head>
 <body>
+
+    <div class="container">
+        <div class="card">
+           <nav class="nav-bar">
+            <h4 class="card-header nav-brnad">JavaScript Name Variations</h4>
+           </nav>
+            <div class="card-body">
+                <label for="name">Enter something:
+                    <input type="text" placeholder="Enter something..." class="form-control" id="something" autocomplete="off">
+                </label>
+                
+                <table class="table table-striped table-hover">
+                   <thead class="table-success">
+                       <tr>
+                           <th width="200px">Variation</th>
+                           <th>Result</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>Number of characters</td>
+                           <td id="answer1"></td>
+                       </tr>
+                       <tr>
+                            <td>First character</td>
+                            <td id="answer2"></td>
+                        </tr>
+                        <tr>
+                            <td>Last character</td>
+                            <td id="answer3"></td>
+                        </tr>
+                        <tr>
+                            <td>Lower case</td>
+                            <td id="answer4"></td>
+                        </tr>
+                        <tr>
+                            <td>Upper case</td>
+                            <td id="answer5"></td>
+                        </tr>
+                        <tr>
+                            <td>Capitalize</td>
+                            <td id="answer6"></td>
+                        </tr>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <script >
+    
+    const answer1 = document.querySelector("#answer1");
+    const answer2 = document.querySelector("#answer2");
+    const answer3 = document.querySelector("#answer3");
+    const answer4 = document.querySelector("#answer4");
+    const answer5 = document.querySelector("#answer5");
+    const answer6 = document.querySelector("#answer6");
+
+    const something = document.querySelector("#something");
+
+    something.addEventListener("keyup",() => {
+        const value = something.value;
+
+        answer1.textContent = getNumberOfChars(value);
+        answer2.textContent = getFirstChar(value);
+        answer3.textContent = getLastChar(value);
+        answer4.textContent = getLower(value);
+        answer5.textContent = getUpper(value);
+        if(value) {
+            answer6.textContent = getCapitalized(value);
+        }
+        else {
+            answer6.textContent = "";
+        }
+    });
+
+
+    /** @param {string} something */
+    function getNumberOfChars(something) {
+        // number of characters in: something
+        return something.length;
+    }
+
+    /** @param {string} something */
+    function getFirstChar(something) {
+        // first character of: something
+        return something[0];
+    }
+
+    /** @param {string} something */
+    function getLastChar(something) {
+        // last character of: something
+        return something[something.length - 1];
+    }
+
+    /** @param {string} something */
+    function getLower(something) {
+        // something all in lower case (example: "ABC" becomes "abc")
+        return something.toLowerCase();
+    }
+
+    /** @param {string} something */
+    function getUpper(something) {
+        // something all in upper case (example: "abc" becomes "ABC")
+        return something.toUpperCase();
+    }
+
+    /** @param {string} something */
+    function getCapitalized(something) {
+        // capitalized version of something (example: "alEX" becomes "Alex")
+        return something[0].toUpperCase() + something.substring(1).toLowerCase();
+    }
+
+    </script>
+  
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
