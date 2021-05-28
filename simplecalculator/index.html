@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="style.css">
+<title>JavaScript Simple Calculator</title>
+</head>
+<body> 
+
+    <div class="container">
+        <div class="card">
+          <img src="" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Simple Calculator</h5>
+            <!-- input division -->
+            <div>
+                <label>
+                    <input type="number" class="form-control" id="input1">
+                </label>
+    
+                <label>
+                    <input type="number" class="form-control" id="input2">
+                </label>
+
+                <label>Answer:
+                    <span id="answer"></span>
+                </label>
+            </div>
+            <!-- buttons division -->
+            <div class="btn">
+                <button type="submit" class="btn btn-sm btn-primary" onclick="times()">*</button>
+                <button type="submit" class="btn btn-sm btn-primary" onclick="divide()">/</button>
+                <button type="submit" class="btn btn-sm btn-primary" onclick="plus()">+</button>
+                <button type="submit" class="btn btn-sm btn-primary" onclick="minus()">-</button>
+                <button type="submit" class="btn btn-sm btn-primary" onclick="del()">Delete</button>
+            </div>
+            
+          </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Code -->
+
+    <script>
+        function times() {
+            var input1 = parseInt(document.querySelector("#input1").value); 
+            var input2 = parseInt(document.querySelector("#input2").value); 
+            var total = input1 * input2;
+                document.querySelector("#answer").innerHTML = total;
+
+        }
+
+        function divide() {
+            var input1 = parseInt(document.querySelector("#input1").value); 
+            var input2 = parseInt(document.querySelector("#input2").value); 
+            var total = input1 / input2;
+                document.querySelector("#answer").innerHTML = total;
+
+        }
+
+        function plus() {
+            var input1 = parseInt(document.querySelector("#input1").value); 
+            var input2 = parseInt(document.querySelector("#input2").value); 
+            var total = input1 + input2;
+                document.querySelector("#answer").innerHTML = total;
+
+        }
+
+        function minus() {
+            var input1 = parseInt(document.querySelector("#input1").value); 
+            var input2 = parseInt(document.querySelector("#input2").value); 
+            var total = input1 - input2;
+                document.querySelector("#answer").innerHTML = total;
+
+        }
+
+        function del() {
+            document.querySelector("#answer").innerHTML = "";
+        }
+
+       
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
