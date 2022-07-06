@@ -1,0 +1,21 @@
+* {
+    background-color: grey;
+}
+.section {
+    position: relative;
+}
+h1 {
+    text-align: center;
+    margin-top: 20%;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.article {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+}
